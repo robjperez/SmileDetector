@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8065B2E20BEA349004ADB08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */; };
 		F81BCE9F20BE9A7A001E0CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCE9E20BE9A7A001E0CFA /* AppDelegate.swift */; };
 		F81BCEA120BE9A7A001E0CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCEA020BE9A7A001E0CFA /* ViewController.swift */; };
 		F81BCEA420BE9A7A001E0CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCEA220BE9A7A001E0CFA /* Main.storyboard */; };
 		F81BCEA620BE9A7B001E0CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81BCEA520BE9A7B001E0CFA /* Assets.xcassets */; };
 		F81BCEA920BE9A7B001E0CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81BCEA720BE9A7B001E0CFA /* LaunchScreen.storyboard */; };
+		F81BCEB120BE9CD4001E0CFA /* ExampleVideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCEB020BE9CD4001E0CFA /* ExampleVideoCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SmileDetector/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F81BCE9B20BE9A7A001E0CFA /* SmileDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81BCE9E20BE9A7A001E0CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F81BCEA020BE9A7A001E0CFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		F81BCEA520BE9A7B001E0CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81BCEA820BE9A7B001E0CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81BCEAA20BE9A7B001E0CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F81BCEB020BE9CD4001E0CFA /* ExampleVideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleVideoCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		F81BCE9220BE9A7A001E0CFA = {
 			isa = PBXGroup;
 			children = (
+				F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */,
 				F81BCE9D20BE9A7A001E0CFA /* SmileDetector */,
 				F81BCE9C20BE9A7A001E0CFA /* Products */,
 			);
@@ -60,6 +65,7 @@
 				F81BCEA520BE9A7B001E0CFA /* Assets.xcassets */,
 				F81BCEA720BE9A7B001E0CFA /* LaunchScreen.storyboard */,
 				F81BCEAA20BE9A7B001E0CFA /* Info.plist */,
+				F81BCEB020BE9CD4001E0CFA /* ExampleVideoCapture.swift */,
 			);
 			path = SmileDetector;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F81BCEA920BE9A7B001E0CFA /* LaunchScreen.storyboard in Resources */,
+				F8065B2E20BEA349004ADB08 /* GoogleService-Info.plist in Resources */,
 				F81BCEA620BE9A7B001E0CFA /* Assets.xcassets in Resources */,
 				F81BCEA420BE9A7A001E0CFA /* Main.storyboard in Resources */,
 			);
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F81BCEA120BE9A7A001E0CFA /* ViewController.swift in Sources */,
+				F81BCEB120BE9CD4001E0CFA /* ExampleVideoCapture.swift in Sources */,
 				F81BCE9F20BE9A7A001E0CFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,12 +288,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MGD69Q275W;
 				INFOPLIST_FILE = SmileDetector/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rpc.SmileDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -297,14 +303,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SmileDetector/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rpc.SmileDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
