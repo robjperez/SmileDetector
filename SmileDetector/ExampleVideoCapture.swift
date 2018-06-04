@@ -11,24 +11,30 @@ import AVFoundation
 
 extension UIApplication {
     func currentDeviceOrientation(cameraPosition pos: AVCaptureDevice.Position) -> OTVideoOrientation {
-        let orientation = statusBarOrientation
-        if pos == .front {
-            switch orientation {
-            case .landscapeLeft: return .up
-            case .landscapeRight: return .down
-            case .portrait: return .left
-            case .portraitUpsideDown: return .right
-            case .unknown: return .up
-            }
-        } else {
-            switch orientation {
-            case .landscapeLeft: return .down
-            case .landscapeRight: return .up
-            case .portrait: return .left
-            case .portraitUpsideDown: return .right
-            case .unknown: return .up
-            }
+        var retValue = OTVideoOrientation.up
+        DispatchQueue.main.sync {
+            retValue = {
+                let orientation = statusBarOrientation                
+                if pos == .front {
+                    switch orientation {
+                    case .landscapeLeft: return .up
+                    case .landscapeRight: return .down
+                    case .portrait: return .left
+                    case .portraitUpsideDown: return .right
+                    case .unknown: return .up
+                    }
+                } else {
+                    switch orientation {
+                    case .landscapeLeft: return .down
+                    case .landscapeRight: return .up
+                    case .portrait: return .left
+                    case .portraitUpsideDown: return .right
+                    case .unknown: return .up
+                    }
+                }
+            }()
         }
+        return retValue
     }
 }
 
@@ -51,23 +57,8 @@ extension AVCaptureSession.Preset {
     }
 }
 
-extension OTVideoFrame {
-    func toUIImageOrientation() -> UIImageOrientation {
-        switch self.orientation {
-        case .down:
-            return .down
-        case .left:
-            return .leftMirrored
-        case .right:
-            return .rightMirrored
-        case .up:
-            return .up
-        }
-    }
-}
-
 protocol VideoCaptureDelegate {
-    func frameCaptured(frame: CVPixelBuffer, orientation: UIImageOrientation)
+    func frameCaptured(frame: CVPixelBuffer, orientation: OTVideoOrientation)
 }
 
 class ExampleVideoCapture: NSObject, OTVideoCapture {
@@ -357,7 +348,7 @@ extension ExampleVideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         if let delegate = delegate {
-            delegate.frameCaptured(frame: imageBuffer, orientation: videoFrame.toUIImageOrientation())
+            delegate.frameCaptured(frame: imageBuffer, orientation: videoFrame.orientation)
         }
         
         videoCaptureConsumer!.consumeFrame(videoFrame)

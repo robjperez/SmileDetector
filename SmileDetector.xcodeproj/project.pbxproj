@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AD50A67C70BF16CFEFFF8E /* Pods_SmileDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1DC9803AC53C8A3755D090 /* Pods_SmileDetector.framework */; };
 		F8065B2E20BEA349004ADB08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */; };
 		F81BCE9F20BE9A7A001E0CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCE9E20BE9A7A001E0CFA /* AppDelegate.swift */; };
 		F81BCEA120BE9A7A001E0CFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81BCEA020BE9A7A001E0CFA /* ViewController.swift */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920C4CCA8E3F38C02028F121 /* Pods-SmileDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileDetector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector.debug.xcconfig"; sourceTree = "<group>"; };
+		9D1DC9803AC53C8A3755D090 /* Pods_SmileDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmileDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SmileDetector/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F81BCE9B20BE9A7A001E0CFA /* SmileDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81BCE9E20BE9A7A001E0CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		F81BCEA820BE9A7B001E0CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81BCEAA20BE9A7B001E0CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F81BCEB020BE9CD4001E0CFA /* ExampleVideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleVideoCapture.swift; sourceTree = "<group>"; };
+		F8E85290096B82E638F5C2FF /* Pods-SmileDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmileDetector.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,18 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AD50A67C70BF16CFEFFF8E /* Pods_SmileDetector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37726C8BD8A7341FA08B9DCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D1DC9803AC53C8A3755D090 /* Pods_SmileDetector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6E7F47DE5446801B2213FB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				920C4CCA8E3F38C02028F121 /* Pods-SmileDetector.debug.xcconfig */,
+				F8E85290096B82E638F5C2FF /* Pods-SmileDetector.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F81BCE9220BE9A7A001E0CFA = {
 			isa = PBXGroup;
 			children = (
 				F8065B2D20BEA349004ADB08 /* GoogleService-Info.plist */,
 				F81BCE9D20BE9A7A001E0CFA /* SmileDetector */,
 				F81BCE9C20BE9A7A001E0CFA /* Products */,
+				E6E7F47DE5446801B2213FB3 /* Pods */,
+				37726C8BD8A7341FA08B9DCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F81BCEAD20BE9A7B001E0CFA /* Build configuration list for PBXNativeTarget "SmileDetector" */;
 			buildPhases = (
+				E3D5A4F1BED6DC3E1316F0D8 /* [CP] Check Pods Manifest.lock */,
 				F81BCE9720BE9A7A001E0CFA /* Sources */,
 				F81BCE9820BE9A7A001E0CFA /* Frameworks */,
 				F81BCE9920BE9A7A001E0CFA /* Resources */,
+				6ED8150077995ECE0E48EB59 /* [CP] Embed Pods Frameworks */,
+				F6A6263E65876B7D9353DF6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6ED8150077995ECE0E48EB59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D5A4F1BED6DC3E1316F0D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmileDetector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A6263E65876B7D9353DF6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVFaceDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmileDetector/Pods-SmileDetector-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F81BCE9720BE9A7A001E0CFA /* Sources */ = {
@@ -286,14 +378,20 @@
 		};
 		F81BCEAE20BE9A7B001E0CFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 920C4CCA8E3F38C02028F121 /* Pods-SmileDetector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = MGD69Q275W;
 				INFOPLIST_FILE = SmileDetector/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rpc.SmileDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "52aec665-0573-461d-8802-5aac83743da5";
+				PROVISIONING_PROFILE_SPECIFIER = "RPC Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,12 +399,16 @@
 		};
 		F81BCEAF20BE9A7B001E0CFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E85290096B82E638F5C2FF /* Pods-SmileDetector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SmileDetector/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rpc.SmileDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
