@@ -72,8 +72,7 @@ extension UIImage {
         
         let context = CIContext(options: nil)
         let cgImage = context.createCGImage(transformed, from: CGRect(x: 0, y: 0, width: width, height: height))
-        self.init(cgImage: cgImage!)
-
+        self.init(cgImage: cgImage!, scale: 1.0, orientation: .up)
     }
 }
 
