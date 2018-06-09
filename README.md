@@ -8,9 +8,9 @@ To fetch images from the camera it uses [OpenTok library](https://tokbox.com/dev
 Application Setup
 -----------------
 
-You will need to create a Firebase project,  download your `GoogleService-info.plist` file containing your project credentials and replace with the empty place holder which lives in `SmileDetector` folder.
+You will need to create a Firebase project, download your `GoogleService-info.plist` file containing your project credentials and replace the empty placeholder file which lives in `SmileDetector` folder.
 
-When you have your firebase dep solved, please run
+When you have your firebase dep solved, please run:
 
 ```shell
 $ pod install
