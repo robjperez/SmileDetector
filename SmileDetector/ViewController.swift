@@ -108,7 +108,7 @@ extension UIImage {
 extension ViewController: VideoCaptureDelegate {
     func frameCaptured(frame: CVPixelBuffer, orientation: OTVideoOrientation) {
         if Date().timeIntervalSince(lastTime) < Double(0.2) {
-            // Limit to 2fps
+            // Limit to 5fps
             return
         }
 
