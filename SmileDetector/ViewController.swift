@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var lastTime = Date()
     @IBOutlet weak var flagView: UIView!
     @IBOutlet weak var sampleImage: UIImageView!
+    @IBOutlet weak var dbgView: UILabel!
 
     let emitterLayer = CAEmitterLayer()
     lazy var cell: CAEmitterCell = {
@@ -66,6 +67,7 @@ class ViewController: UIViewController {
         flagView.isHidden = true
         view.bringSubview(toFront: sampleImage)
         view.bringSubview(toFront: flagView)
+        view.bringSubview(toFront: dbgView)
 
         emitterLayer.backgroundColor = UIColor.blue.cgColor
         emitterLayer.emitterPosition = CGPoint(x: view.frame.size.width / 2, y: 0)
@@ -131,15 +133,19 @@ extension ViewController: VideoCaptureDelegate {
                         return
                     }
 
-                    if let faceArray = faces, faceArray.count > 0 && faceArray[0].smilingProbability > 0.6 {
-                        DispatchQueue.main.async {
-                            self.emitterLayer.birthRate = Float(faceArray[0].smilingProbability * 3)
-                            self.flagView.isHidden = false
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            self.emitterLayer.birthRate = 0
-                            self.flagView.isHidden = true
+                    if let faceArray = faces {
+                        self.dbgView.text = String(format: "Faces: %d\nSmile Probability: %.2f", faceArray.count,  faceArray.count > 0 ? faceArray[0].smilingProbability : 0)
+
+                        if faceArray.count > 0 && faceArray[0].smilingProbability > 0.6 {
+                            DispatchQueue.main.async {
+                                self.emitterLayer.birthRate = Float(faceArray[0].smilingProbability * 3)
+                                self.flagView.isHidden = false
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                self.emitterLayer.birthRate = 0
+                                self.flagView.isHidden = true
+                            }
                         }
                     }
                 }
