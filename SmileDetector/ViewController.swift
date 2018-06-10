@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         return cell
     }()
 
+    @objc func handleDoubleTap(_ sender: UITapGestureRecognizer) {
+        capturer!.toggleCameraPosition()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +64,11 @@ class ViewController: UIViewController {
 
         if let pubView = publisher?.view {
             view.addSubview(pubView)
+
+            let doubleTap = UITapGestureRecognizer(target:self, action: #selector(ViewController.handleDoubleTap(_:)))
+            doubleTap.numberOfTapsRequired = 2
+
+            view.addGestureRecognizer(doubleTap)
             pubView.frame = view.bounds
         }
 
