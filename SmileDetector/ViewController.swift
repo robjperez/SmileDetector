@@ -44,11 +44,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let options = VisionFaceDetectorOptions()
-        options.modeType = .accurate
+        options.modeType = .fast
         options.landmarkType = .all
         options.classificationType = .all
-        options.minFaceSize = CGFloat(0.1)
-        options.isTrackingEnabled = false
+        options.minFaceSize = CGFloat(0.2)
+        options.isTrackingEnabled = true
         detector = Vision.vision().faceDetector(options: options)
 
         capturer = ExampleVideoCapture()
