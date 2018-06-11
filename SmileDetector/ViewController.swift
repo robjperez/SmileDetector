@@ -131,7 +131,7 @@ extension ViewController: VideoCaptureDelegate {
                         return
                     }
 
-                    if let faceArray = faces, faceArray.count > 0 && faceArray[0].smilingProbability > 0.6 {
+                    if let faceArray = faces, faceArray.count > 0 && faceArray[0].smilingProbability > 0.5 {
                         DispatchQueue.main.async {
                             self.emitterLayer.birthRate = Float(faceArray[0].smilingProbability * 3)
                             self.flagView.isHidden = false
