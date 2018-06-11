@@ -41,6 +41,10 @@ class ViewController: UIViewController {
         return cell
     }()
 
+    @objc func handleDoubleTap(_ sender: UITapGestureRecognizer) {
+        capturer!.toggleCameraPosition()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +65,11 @@ class ViewController: UIViewController {
 
         if let pubView = publisher?.view {
             view.addSubview(pubView)
+
+            let doubleTap = UITapGestureRecognizer(target:self, action: #selector(ViewController.handleDoubleTap(_:)))
+            doubleTap.numberOfTapsRequired = 2
+
+            view.addGestureRecognizer(doubleTap)
             pubView.frame = view.bounds
         }
 
@@ -132,7 +141,6 @@ extension ViewController: VideoCaptureDelegate {
                         print("\(error)")
                         return
                     }
-
                     if let faceArray = faces {
                         self.dbgView.text = String(format: "Faces: %d\nSmile Probability: %.2f", faceArray.count,  faceArray.count > 0 ? faceArray[0].smilingProbability : 0)
 
